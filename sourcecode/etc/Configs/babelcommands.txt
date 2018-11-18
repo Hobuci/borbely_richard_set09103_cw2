@@ -1,0 +1,6 @@
+To extract
+  pybabel extract -F etc/Config/babel.cfg -o messages.pot .
+Translation file for language hu
+  pybabel init -i messages.pot -d translations -l hu
+Compile
+  pybabel compile -d translations

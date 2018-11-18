@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="filters" class="jumbotron-fluid">
+  <div id="filtersRow" class="row">
+
+    {% for filter in Filters %}
+      <div class="col-2-fluid">
+        {% if selected == filter %}
+        <div id="filter" class="jumbotron-fluid shadow-sm selectedFilter">
+          <img id="filter" src="{{ url_for('static', filename='images/lollipop_') }}{{filter}}.png"/>
+          <p>{{ _(filter) }}</p>
+        </div>
+        {% else %}
+          {% if filter == "Coming soon" %}
+            <div id="filter" class="jumbotron-fluid shadow-sm notSelectedFilter">
+              <img id="filter" src="{{ url_for('static', filename='images/lollipop_') }}{{filter}}.png"/>
+              <p>{{ _(filter) }}</p>
+            </div>
+          {% else %}
+            <div id="filter" class="jumbotron-fluid shadow-sm notSelectedFilter" onclick="location.href='/products/{{filter.lower()}}'">
+              <img id="filter" src="{{ url_for('static', filename='images/lollipop_') }}{{filter}}.png"/>
+              <p>{{ _(filter) }}</p>
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+<div id="products" class="jumbotron shadow">
+
+  {% for product in productIDs %}
+    <div id="product" class="jumbotron" onmouseover="ShowProductButtons('productButtons_{{product}}')" onmouseleave="HideProductButtons('productButtons_{{product}}')">
+
+      <div id="productImg" class="jumbotron-fluid">
+        <img id="productImg" src="{{ url_for('static', filename='images/products/lollipop/') }}{{product}}.JPG"/>
+      </div>
+
+      <div id="productButtons_{{product}}" class="jumbotron-fluid row productButtons">
+        <div id="qty" class="col-8">
+          <button id="btn_minus" class="btn" for="p_{{product}}" onclick="Decrease(this.getAttribute('for'))"><</button>
+            <p id="p_{{product}}" class="qty">0</p>
+          <button id="btn_plus" class="btn" for="p_{{product}}" onclick="Increase(this.getAttribute('for'))">></button>
+        </div>
+        <div id="bag_add" class="col-4">
+          <a href="javascript:void(0);" onclick="AddToBag({{product}})"><img id="bag_add" title="{{ _('Add to Bag') }}" src="{{ url_for('static', filename='images/bag_add.png') }}"></a>
+        </div>
+      </div>
+
+    </div>
+  {% endfor %}
+
+</div>
+
+{% endblock content %}

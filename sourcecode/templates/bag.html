@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="bag" class="jumbotron shadow">
+  {% if bagList == None %}
+    <h2>{{ _("Your shopping bag is empty") }}</h2>
+    <h2>{{ _("Go browse the products page") }}</h2>
+    <a href="/products"><h2>{{ _("Products Page") }}</h2></a>
+  {% else %}
+    {% for product in bagList %}
+      <div id="product" class="jumbotron">
+        <div id="productImg" class="jumbotron-fluid">
+          <img id="productImg" src="{{ url_for('static', filename='images/products/lollipop/') }}{{product[0]}}.JPG"/>
+        </div>
+
+        <div id="productButtons_{{product[0]}}" class="jumbotron-fluid row productButtons shown">
+          <div id="qty" class="col-8">
+            <button id="btn_minus" class="btn" for="p_{{product[0]}}" onclick="Decrease(this.getAttribute('for'))"><</button>
+              <p id="p_{{product[0]}}" class="qty">{{product[1]}}</p>
+            <button id="btn_plus" class="btn" for="p_{{product[0]}}" onclick="Increase(this.getAttribute('for'))">></button>
+          </div>
+          <div id="bag_add" class="col-4">
+            <a href="javascript:void(0);" onclick="AddToBag({{product[0]}})"><img id="bag_add" title="{{ _('Refresh Count') }}" src="{{ url_for('static', filename='images/bag_refresh.png') }}"></a>
+          </div>
+        </div>
+
+        <button id="removeFromBag" onclick="RemoveFromBag({{product[0]}})" class="btn btn-sm shadow-sm" title="{{ _('Remove') }}">{{ _('Remove') }}</button>
+      </div>
+    {% endfor %}
+  {% endif %}
+  {% if bagListCount > 0 %}
+    {% if lang == "en" %}
+      <div id="price" class="jumbotron">£ {{price}}</div>
+    {% else %}
+      <div id="price" class="jumbotron">{{price}} Ft.</div>
+    {% endif %}
+    <a href="/checkout"><button id="checkout" class="btn btn-primary">{{ _("Checkout") }}</button></a>
+  {% endif %}
+</div>
+
+{% endblock content %}

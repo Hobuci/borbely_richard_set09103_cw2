@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="login" class="jumbotron shadow">
+
+  {% if error != None %}
+    <div id="error" class="jumbotron shadow-sm hasMarginBtom">
+      <p>{{error}}</p>
+    </div>
+  {% endif %}
+
+  <form id="form-login" class="form-signin" action= "/login" method="POST">
+    <div class="form-label-group">
+      {% if registeredEmail != None %}
+        <input id="inputEmail" name="email" type="email" class="form-control" placeholder="{{ _('Email address') }}" value="{{registeredEmail}}" required autofocus>
+      {% else %}
+        <input id="inputEmail" name="email" type="email" class="form-control" placeholder="{{ _('Email address') }}" required autofocus>
+      {% endif %}
+    </div>
+
+    <div class="form-label-group">
+      <input id="inputPassword" name="password" type="password" class="form-control" placeholder="{{ _('Password') }}" required>
+    </div>
+
+    <div class="custom-control custom-checkbox">
+      <input id="checkbox" name="rememberpw" type="checkbox" class="custom-control-input form-control">
+      <label id="checkboxLabel" class="custom-control-label" for="checkbox">{{ _("Remember password") }}</label>
+    </div>
+
+    <button id="form-login" class="btn btn-sm btn-primary btn-block" type="submit">{{ _("Sign in") }}</button>
+    <a href="/register"><button id="register" class="btn btn-sm btn-primary" type="button">{{ _("Register") }}</button></a>
+  </form>
+
+</div>
+
+{% endblock content %}

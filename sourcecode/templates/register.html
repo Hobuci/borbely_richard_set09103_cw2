@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="login" class="jumbotron shadow">
+
+  {% if error != None %}
+    <div id="error" class="jumbotron shadow-sm hasMarginBtom">
+      <p>{{error}}</p>
+    </div>
+  {% else %}
+    <div id="error" class="jumbotron shadow-sm hidden noMarginBtom">
+      <p>{{ _("Passwords don't match!") }}</p>
+    </div>
+  {% endif %}
+
+  <form id="form-register" class="form-signin" action="/register" method="POST">
+    <div class="form-label-group">
+      <input id="inputEmail" name="email" type="email" class="form-control" placeholder="{{ _('Email address') }}" required autofocus>
+    </div>
+
+    <div class="form-label-group">
+      <input id="inputPassword" name="password" type="password" class="form-control" placeholder="{{ _('Password') }}" required>
+    </div>
+    <div class="form-label-group">
+      <input id="inputPassword2" name="password_confirm" type="password" class="form-control" placeholder="{{ _('Confirm Password') }}" required>
+    </div>
+
+    <button id="register" class="btn btn-sm btn-primary btn-block" onclick="ConfirmPw()" type="button">{{ _("Register") }}</button>
+  </form>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,245 @@
+# Translations template for PROJECT.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-11-18 16:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: templates/layout.html:40 webshop.py:78
+msgid "Home"
+msgstr ""
+
+#: webshop.py:81
+msgid "Round"
+msgstr ""
+
+#: webshop.py:81
+msgid "Heart"
+msgstr ""
+
+#: webshop.py:81
+msgid "Coming soon"
+msgstr ""
+
+#: webshop.py:81
+msgid "Customise"
+msgstr ""
+
+#: templates/layout.html:41 webshop.py:85 webshop.py:89 webshop.py:93
+#: webshop.py:96
+msgid "Products"
+msgstr ""
+
+#: templates/layout.html:42 webshop.py:156 webshop.py:157 webshop.py:158
+msgid "Events"
+msgstr ""
+
+#: templates/layout.html:43 webshop.py:162
+msgid "About"
+msgstr ""
+
+#: templates/layout.html:45 webshop.py:171
+msgid "Orders"
+msgstr ""
+
+#: webshop.py:204
+msgid "Incorrect email/password combination"
+msgstr ""
+
+#: templates/layout.html:31 webshop.py:205 webshop.py:207
+msgid "Login"
+msgstr ""
+
+#: webshop.py:224
+msgid "Account already exists!"
+msgstr ""
+
+#: templates/login.html:31 templates/register.html:28 webshop.py:225
+#: webshop.py:234
+msgid "Register"
+msgstr ""
+
+#: webshop.py:254 webshop.py:257
+msgid "Bag"
+msgstr ""
+
+#: templates/bag.html:37 webshop.py:296
+msgid "Checkout"
+msgstr ""
+
+#: templates/bag.html:6
+msgid "Your shopping bag is empty"
+msgstr ""
+
+#: templates/bag.html:7
+msgid "Go browse the products page"
+msgstr ""
+
+#: templates/bag.html:8
+msgid "Products Page"
+msgstr ""
+
+#: templates/bag.html:23
+msgid "Refresh Count"
+msgstr ""
+
+#: templates/bag.html:27
+msgid "Remove"
+msgstr ""
+
+#: templates/checkout.html:8
+msgid "Delivery Address"
+msgstr ""
+
+#: templates/checkout.html:9
+msgid "Full Name"
+msgstr ""
+
+#: templates/checkout.html:11
+msgid "Address"
+msgstr ""
+
+#: templates/checkout.html:13
+msgid "City"
+msgstr ""
+
+#: templates/checkout.html:15
+msgid "Country"
+msgstr ""
+
+#: templates/checkout.html:17
+msgid "Postcode"
+msgstr ""
+
+#: templates/checkout.html:21
+msgid "Payment"
+msgstr ""
+
+#: templates/checkout.html:23
+msgid "Name on Card"
+msgstr ""
+
+#: templates/checkout.html:25
+msgid "Card Number"
+msgstr ""
+
+#: templates/checkout.html:27
+msgid "Exp. Month"
+msgstr ""
+
+#: templates/checkout.html:29
+msgid "Exp. Year"
+msgstr ""
+
+#: templates/checkout.html:31
+msgid "Security Code"
+msgstr ""
+
+#: templates/checkout.html:40
+msgid "Purchase"
+msgstr ""
+
+#: templates/customise.html:4
+msgid "Customize your own!"
+msgstr ""
+
+#: templates/events.html:5
+msgid "Upcoming"
+msgstr ""
+
+#: templates/events.html:8 templates/events.html:16
+msgid "Edinburgh, Scotland"
+msgstr ""
+
+#: templates/events.html:9 templates/events.html:17
+msgid "Princess Street Gardens East"
+msgstr ""
+
+#: templates/events.html:13
+msgid "Past"
+msgstr ""
+
+#: templates/layout.html:29
+msgid "Logout"
+msgstr ""
+
+#: templates/layout.html:33
+msgid "Shopping Bag"
+msgstr ""
+
+#: templates/layout.html:58
+msgid "Information"
+msgstr ""
+
+#: templates/layout.html:60
+msgid "Delivery"
+msgstr ""
+
+#: templates/layout.html:61
+msgid "Terms and Conditions"
+msgstr ""
+
+#: templates/layout.html:62
+msgid "About Cookies"
+msgstr ""
+
+#: templates/layout.html:63
+msgid "Privacy Notice"
+msgstr ""
+
+#: templates/layout.html:66
+msgid "About us"
+msgstr ""
+
+#: templates/layout.html:68
+msgid "Careers"
+msgstr ""
+
+#: templates/layout.html:69
+msgid "Become an affiliate"
+msgstr ""
+
+#: templates/layout.html:70
+msgid "Become a partner"
+msgstr ""
+
+#: templates/login.html:15 templates/login.html:17 templates/register.html:18
+msgid "Email address"
+msgstr ""
+
+#: templates/login.html:22 templates/register.html:22
+msgid "Password"
+msgstr ""
+
+#: templates/login.html:27
+msgid "Remember password"
+msgstr ""
+
+#: templates/login.html:30
+msgid "Sign in"
+msgstr ""
+
+#: templates/products.html:48
+msgid "Add to Bag"
+msgstr ""
+
+#: templates/register.html:12
+msgid "Passwords don't match!"
+msgstr ""
+
+#: templates/register.html:25
+msgid "Confirm Password"
+msgstr ""
+

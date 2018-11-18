@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" /> <!--IE to use latest render engine-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" /> <!--Bootstrap function - use display width-->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/main.css') }}">
+    <!-- Page Title -->
+    <title>{{title}}</title>
+  </head>
+  <body>
+  <!-- Navbar -->
+    <div id="header" class="container-fluid shadow">
+      <div class="row">
+        <div class="col-2">
+          <a href="javascript:void(0);" onclick="ChangeLanguage('en')"><img id="lang_eng" title="English" src="{{ url_for('static', filename='images/english.jpg') }}"></a>
+          <br />
+          <a href="javascript:void(0);" onclick="ChangeLanguage('hu')"><img id="lang_hun" title="Magyar" src="{{ url_for('static', filename='images/hungarian.jpg') }}"></a>
+        </div>
+        <div class="col-8">
+          <h1> Cukor-Ka-Land </h1>
+        </div>
+        <div class="col-2">
+          {% if user != None %}
+            <a href="/logout"><img id="logout" title="{{ _('Logout') }}" src="{{ url_for('static', filename='images/logout.png') }}"></a>
+          {% else %}
+            <a href="/login"><img id="login" title="{{ _('Login') }}" src="{{ url_for('static', filename='images/login.png') }}"></a>
+          {% endif %}
+          <a href="/bag"><img id="bag" title="{{ _('Shopping Bag') }}" src="{{ url_for('static', filename='images/bag.png') }}"></a>
+          <a href="/bag"><p id="bagListCount">{{bagListCount}}</p></a>
+        </div>
+      </div>
+    </div>
+    <nav id="navbar" class="navbar sticky-top shadow-sm">
+      <ul class="nav navbar-nav">
+        <li><a href="/">{{ _("Home") }}</a></li>
+        <li><a href="/products">{{ _("Products") }}</a></li>
+        <li><a href="/events">{{ _("Events") }}</a></li>
+        <li><a href="/about">{{ _("About") }}</a></li>
+        {% if user["email"] == "admin@admin" %}
+          <li id="orders"><a href="/orders">{{ _("Orders") }}</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <div id="content">
+      {% block content %}
+      {% endblock content %}
+    </div>
+
+    <div id="footer">
+      <div class="row">
+        <div class="col-3">
+          <h2>{{_("Information")}}</h2>
+          <br />
+          <p>{{_("Delivery")}}</p>
+          <p>{{_("Terms and Conditions")}}</p>
+          <p>{{_("About Cookies")}}</p>
+          <p>{{_("Privacy Notice")}}</p>
+        </div>
+        <div class="col-3">
+          <h2>{{_("About us")}}</h2>
+          <br />
+          <p>{{_("Careers")}}</p>
+          <p>{{_("Become an affiliate")}}</p>
+          <p>{{_("Become a partner")}}</p>
+        </div>
+        <div class="col-6">
+          <img class="social" title="Facebook" src="{{ url_for('static', filename='images/facebook.png') }}">
+          <img class="social" title="Twitter" src="{{ url_for('static', filename='images/twitter.png') }}">
+          <img class="social" title="Instagram" src="{{ url_for('static', filename='images/instagram.png') }}">
+          <br />
+          <img class="payment" title="Payment Types" src="{{ url_for('static', filename='images/payment.png') }}">
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/main.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/bootstrap-native-v4.min.js') }}"></script>
+  </body>
+</html>

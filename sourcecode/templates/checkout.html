@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="checkout" class="jumbotron shadow">
+  <form id="form-delivery" action="/checkout" method="POST">
+    <div class="row">
+      <div id="deliveryDetails" class="col-6">
+        <h2>{{ _("Delivery Address") }}</h2>
+          <label class="deliveryDetailsLabel" for="name">{{ _("Full Name") }}</label>
+          <input class="deliveryDetailsInput form-control" type="text" id="name" name="name" placeholder="John Doe" required>
+          <label class="deliveryDetailsLabel" for="addr">{{ _("Address") }}</label>
+          <input class="deliveryDetailsInput form-control" type="text" id="addr" name="address" placeholder="22 Princess Street" required>
+          <label class="deliveryDetailsLabel" for="city">{{ _("City") }}</label>
+          <input class="deliveryDetailsInput form-control" type="text" id="city" name="city" placeholder="Edinburgh" required>
+          <label class="deliveryDetailsLabel" for="country">{{ _("Country") }}</label>
+          <input class="deliveryDetailsInput form-control" type="text" id="country" name="country" placeholder="United Kingdom" required>
+          <label class="deliveryDetailsLabel" for="postcode">{{ _("Postcode") }}</label>
+          <input class="deliveryDetailsInput form-control" type="text" id="postcode" name="postcode" placeholder="XR22 H6" required>
+      </div>
+      <div id="paymentDetails" class="col-6">
+        <h2>{{ _("Payment") }}</h2>
+        <img id="payment_checkout" title="Payment Types" src="{{ url_for('static', filename='images/payment.png') }}">
+        <label class="paymentDetailsLabel" for="nameonCard">{{ _("Name on Card") }}</label>
+        <input class="paymentDetailsInput form-control" type="text" id="nameonCard" name="fullname" placeholder="John Doe">
+        <label class="paymentDetailsLabel" for="cardNumber">{{ _("Card Number") }}</label>
+        <input class="paymentDetailsInput form-control" type="text" id="cardNumber" name="cardNumber" placeholder="0000 0000 0000 0000 00000">
+        <label class="paymentDetailsLabel" for="expMonth">{{ _("Exp. Month") }}</label>
+        <input class="paymentDetailsInput form-control" type="text" id="expMonth" name="expMonth" placeholder="1">
+        <label class="paymentDetailsLabel" for="expYear">{{ _("Exp. Year") }}</label>
+        <input class="paymentDetailsInput form-control" type="text" id="expYear" name="expYear" placeholder="19">
+        <label class="paymentDetailsLabel" for="secCode">{{ _("Security Code") }}</label>
+        <input class="paymentDetailsInput form-control" type="text" id="secCode" name="secCode" placeholder="123">
+      </div>
+
+      {% if lang == "en" %}
+        <div id="price" class="jumbotron">£ {{price}}</div>
+      {% else %}
+        <div id="price" class="jumbotron">{{price}} Ft.</div>
+      {% endif %}
+      <button id="checkout" class="btn btn-primary btn-block" type="submit">{{ _("Purchase") }}</button>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}

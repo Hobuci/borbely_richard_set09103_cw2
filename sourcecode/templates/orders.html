@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="orders" class="jumbotron shadow">
+  {% for order in orders %}
+    <div id="order" class="row shadow">
+      <div id="details" class="col-6">
+        <p>{{order["name"]}}</p>
+        <p>{{order["address"]}}</p>
+        <p>{{order["city"]}}</p>
+        <p>{{order["country"]}}</p>
+        <p>{{order["postcode"]}}</p>
+        <p>{{order["date"]}}</p>
+      </div>
+      <div id="orderBag" class="col-6">
+        {% for item in order["bag"] %}
+          <div id="product_order" class="jumbotron">
+            <div id="productImg" class="jumbotron-fluid">
+              <img id="productImg" src="{{ url_for('static', filename='images/products/lollipop/') }}{{item[0]}}.JPG"/>
+            </div>
+            <div id="count"><h2>{{item[1]}}</h2></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}
