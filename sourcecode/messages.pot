@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-11-18 16:45+0000\n"
+"POT-Creation-Date: 2018-11-19 22:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,65 +17,65 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: templates/layout.html:40 webshop.py:78
+#: templates/layout.html:40 webshop.py:81
 msgid "Home"
 msgstr ""
 
-#: webshop.py:81
+#: webshop.py:84
 msgid "Round"
 msgstr ""
 
-#: webshop.py:81
+#: webshop.py:84
 msgid "Heart"
 msgstr ""
 
-#: webshop.py:81
+#: webshop.py:84
 msgid "Coming soon"
 msgstr ""
 
-#: webshop.py:81
+#: webshop.py:84
 msgid "Customise"
 msgstr ""
 
-#: templates/layout.html:41 webshop.py:85 webshop.py:89 webshop.py:93
-#: webshop.py:96
+#: templates/layout.html:41 webshop.py:88 webshop.py:92 webshop.py:96
+#: webshop.py:99
 msgid "Products"
 msgstr ""
 
-#: templates/layout.html:42 webshop.py:156 webshop.py:157 webshop.py:158
+#: templates/layout.html:42 webshop.py:159 webshop.py:160 webshop.py:161
 msgid "Events"
 msgstr ""
 
-#: templates/layout.html:43 webshop.py:162
+#: templates/layout.html:43 webshop.py:165
 msgid "About"
 msgstr ""
 
-#: templates/layout.html:45 webshop.py:171
+#: templates/layout.html:45 webshop.py:174
 msgid "Orders"
 msgstr ""
 
-#: webshop.py:204
+#: webshop.py:232
 msgid "Incorrect email/password combination"
 msgstr ""
 
-#: templates/layout.html:31 webshop.py:205 webshop.py:207
+#: templates/layout.html:31 webshop.py:233 webshop.py:235
 msgid "Login"
 msgstr ""
 
-#: webshop.py:224
+#: webshop.py:252
 msgid "Account already exists!"
 msgstr ""
 
-#: templates/login.html:31 templates/register.html:28 webshop.py:225
-#: webshop.py:234
+#: templates/login.html:31 templates/register.html:28 webshop.py:253
+#: webshop.py:262
 msgid "Register"
 msgstr ""
 
-#: webshop.py:254 webshop.py:257
+#: webshop.py:282 webshop.py:285
 msgid "Bag"
 msgstr ""
 
-#: templates/bag.html:37 webshop.py:296
+#: templates/bag.html:37 webshop.py:324
 msgid "Checkout"
 msgstr ""
 
@@ -229,6 +229,18 @@ msgstr ""
 
 #: templates/login.html:30
 msgid "Sign in"
+msgstr ""
+
+#: templates/orders.html:32
+msgid "Mark Important"
+msgstr ""
+
+#: templates/orders.html:33
+msgid "Mark Completed"
+msgstr ""
+
+#: templates/orders.html:34
+msgid "Delete"
 msgstr ""
 
 #: templates/products.html:48

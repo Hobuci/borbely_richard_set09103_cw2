@@ -49,3 +49,15 @@ function ConfirmPw() {
     document.getElementById("error").style.marginBottom = "2vw";
   }
 }
+function markOrderCompleted(obj) {
+  orderID = obj.parentElement.parentElement.getAttribute("db_id");
+  window.location.href = "/orders/completed/" + orderID;
+}
+function markOrderImportant(obj) {
+  orderID = obj.parentElement.parentElement.getAttribute("db_id");
+  window.location.href = "/orders/important/" + orderID;
+}
+function deleteOrder(obj) {
+  orderID = obj.parentElement.parentElement.getAttribute("db_id");
+  window.location.href = "/orders/delete/" + orderID;
+}

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-11-18 16:45+0000\n"
-"PO-Revision-Date: 2018-11-18 16:45+0000\n"
+"POT-Creation-Date: 2018-11-19 22:14+0000\n"
+"PO-Revision-Date: 2018-11-19 22:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hu\n"
 "Language-Team: hu <LL@li.org>\n"
@@ -231,6 +231,18 @@ msgstr "Emlékezz a jelszóra"
 #: templates/login.html:30
 msgid "Sign in"
 msgstr "Bejelentkezés"
+
+#: templates/orders.html:32
+msgid "Mark Important"
+msgstr "Fontosnak Jelöl"
+
+#: templates/orders.html:33
+msgid "Mark Completed"
+msgstr "Késznek Jelöl"
+
+#: templates/orders.html:34
+msgid "Delete"
+msgstr "Törlés"
 
 #: templates/products.html:48
 msgid "Add to Bag"

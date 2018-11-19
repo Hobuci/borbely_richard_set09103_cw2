@@ -3,6 +3,7 @@ from babel import dates
 from datetime import date, datetime
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_babel import Babel, gettext
+from bson.objectid import ObjectId
 from static.pythonscript.AESencryption import encrypt, decrypt
 app = Flask(__name__)
 babel = Babel(app)
@@ -71,9 +72,9 @@ def updateDBUserBag():
     if getUser() != None: # User is logged in, store items in database
         userID = dbUsers.find_one({"email": getUser()["email"]})["_id"]
         if "bag" not in session:
-            dbUsers.update_one({'_id': userID}, {"$set": {"bag":None}}, upsert=False)
+            dbUsers.update_one({'_id':userID}, {"$set": {"bag":None}}, upsert=False)
         else:
-            dbUsers.update_one({'_id': userID}, {"$set": {"bag":session["bag"]}}, upsert=False)
+            dbUsers.update_one({'_id':userID}, {"$set": {"bag":session["bag"]}}, upsert=False)
 
 @app.route("/")
 def index():
@@ -172,6 +173,31 @@ def orders():
 
         return render_template('orders.html', title=gettext("Orders"), bagListCount=getBagListCount(), user=getUser(), orders=orders)
     return redirect("/")
+@app.route("/orders/completed/<orderID>")
+def orderCompleted(orderID):
+    orderID = ObjectId(orderID)
+    if "completed" in dbOrders.find_one({"_id":orderID}) and dbOrders.find_one({"_id":orderID})["completed"] == True:
+        dbOrders.update_one({"_id":orderID}, {"$set": {"completed":False}}, upsert=False)
+    else:
+        dbOrders.update_one({"_id":orderID}, {"$set": {"completed":True}}, upsert=False)
+
+    return redirect("/orders")
+@app.route("/orders/important/<orderID>")
+def orderImportant(orderID):
+    orderID = ObjectId(orderID)
+    if "important" in dbOrders.find_one({"_id":orderID}) and dbOrders.find_one({"_id":orderID})["important"] == True:
+        dbOrders.update_one({"_id":orderID}, {"$set": {"important":False}}, upsert=False)
+    else:
+        dbOrders.update_one({'_id':orderID}, {"$set": {"important":True}}, upsert=False)
+
+    return redirect("/orders")
+@app.route("/orders/delete/<orderID>")
+def orderDelete(orderID):
+    orderID = ObjectId(orderID)
+    dbOrders.remove({"_id":orderID})
+
+    return redirect("/orders")
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

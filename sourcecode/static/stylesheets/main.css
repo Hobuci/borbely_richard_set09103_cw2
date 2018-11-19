@@ -492,6 +492,7 @@ div#orders {
 }
 div#order {
   padding: 5%;
+  padding-bottom: 2%;
   margin: 0;
   border-bottom: 1px solid;
 }
@@ -505,6 +506,15 @@ div#product_order {
 }
 div#count {
   height: 2vw;
+}
+div#orderFunctionality {
+  width: 100%;
+  padding-top: 1%;
+  border-top: 1px dashed;
+}
+button#completedOrder, button#deleteOrder, button#importantOrder {
+  float: right;
+  margin-left: 0.5vw;
 }
 
 /* ETC. */
@@ -548,4 +558,10 @@ div#count {
   }
   .notSelectedFilter {
     background-color: #353535;
+  }
+  .completedOrder {
+    background-color: #DDFFDD;
+  }
+  .importantOrder {
+    background-color: #FFDDDD;
   }

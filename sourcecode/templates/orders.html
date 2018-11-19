@@ -3,7 +3,13 @@
 
 <div id="orders" class="jumbotron shadow">
   {% for order in orders %}
-    <div id="order" class="row shadow">
+    {% if order["completed"] == True %}
+      <div id="order" db_id="{{order['_id']}}" class="row shadow completedOrder">
+    {% elif order["important"] == True %}
+      <div id="order" db_id="{{order['_id']}}" class="row shadow importantOrder">
+    {% else %}
+      <div id="order" db_id="{{order['_id']}}" class="row shadow">
+    {% endif %}
       <div id="details" class="col-6">
         <p>{{order["name"]}}</p>
         <p>{{order["address"]}}</p>
@@ -21,6 +27,11 @@
             <div id="count"><h2>{{item[1]}}</h2></div>
           </div>
         {% endfor %}
+      </div>
+      <div id="orderFunctionality" class="jumbotron-fluid">
+        <button id="importantOrder" onclick="markOrderImportant(this)" class="btn btn-primary btn-sm shadow-sm" title="{{ _('Mark Important') }}">{{ _('Mark Important') }}</button>
+        <button id="completedOrder" onclick="markOrderCompleted(this)" class="btn btn-primary btn-sm shadow-sm" title="{{ _('Mark Completed') }}">{{ _('Mark Completed') }}</button>
+        <button id="deleteOrder" onclick="deleteOrder(this)" class="btn btn-primary btn-sm shadow-sm" title="{{ _('Delete') }}">{{ _('Delete') }}</button>
       </div>
     </div>
   {% endfor %}
