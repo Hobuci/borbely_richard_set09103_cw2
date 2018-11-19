@@ -1,6 +1,6 @@
 Advanced Web Tech Module @ Edinburgh Napier University
 
-Heroku Hosted link: http://webshop-cukorkaland.herokuapp.com
+Heroku Hosted link: https://webshop-cukorkaland.herokuapp.com
 
 Task: The objective is to demonstrate your understanding of server-side web development and mastery of
 the Python Flask micro-framework. You will achieve this by completing a personal project in which
