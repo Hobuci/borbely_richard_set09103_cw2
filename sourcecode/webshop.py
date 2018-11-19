@@ -3,8 +3,10 @@ from babel import dates
 from datetime import date, datetime
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_babel import Babel, gettext
+from static.pythonscript.AESencryption import encrypt, decrypt
 app = Flask(__name__)
 babel = Babel(app)
+AES_key = "1ZK91d+7pMe+U3m+DdNnUA=="
 dbClient = pymongo.MongoClient("mongodb://<admin>:<X7R9gxnwzUkQ5ZR>@ds063909.mlab.com:63909/webshopapp-napier")
 app.secret_key = "K*GH^$DB$%:DLC@SHCT2S735SNC*&hd5"
 app.config["BABEL_DEFAULT_LOCALE"] = "en"
@@ -163,7 +165,7 @@ def about():
 
 @app.route("/orders")
 def orders():
-    if getUser() != None and getUser()["email"] == "admin@admin":
+    if getUser() != None and decrypt(AES_key, getUser()["email"]) == "admin@admin":
         orders = []
         for order in dbOrders.find():
             orders.append(order)
@@ -182,7 +184,7 @@ def login():
     error = None
 
     if request.method == "POST":
-        email = request.form["email"]
+        email = encrypt(AES_key, request.form["email"])
         password = request.form["password"]
         rememberpw = False
         if "rememberpw" in request.form:
@@ -216,7 +218,7 @@ def logout():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        email = request.form["email"]
+        email = encrypt(AES_key, request.form["email"])
         password = bcrypt.hashpw(request.form["password"].encode('utf-8'), bcrypt.gensalt())
 
         for user in dbUsers.find():
@@ -228,7 +230,7 @@ def register():
             dbUsers.insert_one({"email":email, "pw":password, "bag":session["bag"]})
         else:
             dbUsers.insert_one({"email":email, "pw":password, "bag":[]})
-        session["registeredEmail"] = email
+        session["registeredEmail"] = decrypt(AES_key, email)
         return redirect("/login")
 
     return render_template('register.html', title=gettext("Register"), bagListCount=getBagListCount(), user=getUser(), error=None)

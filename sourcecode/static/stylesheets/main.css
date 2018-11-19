@@ -227,6 +227,9 @@ img#productImg {
   width: 100%;
   height: 100%;
 }
+img#productImg:hover {
+  cursor: zoom-in;
+}
 div#productImg:active {
   z-index: 2;
 }
@@ -239,7 +242,7 @@ img#productImg:active {
   padding: 0;
   position: relative;
   z-index: 1;
-  bottom: 1.95vw;
+  bottom: 2.01vw;
   height: 10%;
   width: 90%;
   margin-left: 5%;
@@ -249,6 +252,7 @@ img#productImg:active {
   opacity: 0;
 }
 div#bag_add {
+  height: 100%;
   padding: 0;
 }
 img#bag_add {
@@ -257,6 +261,7 @@ img#bag_add {
   height: 100%;
 }
 div#qty {
+  height: 100%;
   padding: 0;
 }
 button#btn_minus, button#btn_plus {

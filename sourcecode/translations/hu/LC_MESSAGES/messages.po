@@ -82,7 +82,7 @@ msgstr "Pénztár"
 
 #: templates/bag.html:6
 msgid "Your shopping bag is empty"
-msgstr "Üres a bevásárló szatyrod"
+msgstr "Üres a bevásárló kosarad"
 
 #: templates/bag.html:7
 msgid "Go browse the products page"
